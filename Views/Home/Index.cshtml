@@ -1,0 +1,38 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+@model restauranter.Models.Review
+<h1>Write a New Review:</h1>
+<form asp-controller="Home" asp-action="Add" method="post">
+    <div class="form-group">
+        <label asp-for="Author"></label>
+        <input class="form-control" asp-for="Author">
+    </div>
+    <div class="form-group">
+        <label asp-for="RestName"></label>
+        <input class="form-control" asp-for="RestName">
+    </div>
+    <div class="form-group">
+        <label asp-for="Context"></label>
+        <input class="form-control" asp-for="Context">
+    </div>
+    <div class="form-group">
+        <label asp-for="Rating"></label>
+        <select class="form-control" asp-for="Rating">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="VDate"></label>
+        <input class="form-control" type="date" max="@DateTime.Now.Date.ToString()" asp-for="VDate">
+    </div>
+    <div class="form-group">
+        <input class="form-control" type="submit" value="Add Review">
+    </div>
+</form>
+<div asp-validation-summary="All"></div>

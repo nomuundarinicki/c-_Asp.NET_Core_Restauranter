@@ -1,0 +1,9 @@
+
+<h1>Display</h1>
+@foreach (var review in @ViewBag.Reviews)
+{
+    <h4>Review For: @review.RestName      @review.Rating Stars</h4>
+    <h5>Reviewer: @review.Author</h5>
+    <p>@review.Context</p><br><br>
+
+}
